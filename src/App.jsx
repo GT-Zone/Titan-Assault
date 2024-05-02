@@ -1,11 +1,10 @@
 import "./App.css";
+import Sign_up from "./component/sign_up";
 
 const App = () => {
   return (
     <>
-      <div className="flex justify-center items-center w-full">
-        <h1 className="text-2xl">Titan Assault</h1>
-      </div>
+      <Sign_up />
     </>
   );
 };

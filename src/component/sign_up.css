@@ -1,0 +1,56 @@
+.background {
+  height: 100vh;
+  width: 100vw;
+}
+.img {
+  height: 100vh;
+  width: 100dvw;
+  object-fit: fill;
+  position: relative;
+}
+.border_div {
+  position: absolute;
+  top: 55%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  border: 0.1rem solid black;
+  height: 17rem;
+  width: 31rem;
+  display: flex;
+  align-items: center;
+  padding-top: 1rem;
+  gap: 1.3rem;
+  flex-direction: column;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.384);
+  padding-bottom: 1rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 18rem;
+  height: 5rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0.2rem;
+  padding-left: 0.5rem;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #087af5;
+}
+button[type="submit"]:hover {
+  border: 0.01rem solid rgb(112, 107, 107);
+  border-color: rgb(114, 109, 109);
+  width: 4rem;
+}
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover {
+  width: 19rem;
+}
