@@ -13,8 +13,6 @@
 .assault {
   position: absolute;
   color: #5d92cb;
-  /* color: transparent;
-  white-space: nowrap; */
   z-index: 1;
   font-size: 3.7rem;
   font-family: "Orbitron", sans-serif;
@@ -123,7 +121,7 @@ input[type="password"]:hover {
   border: 0.01rem solid rgb(0, 0, 0);
   background-color: rgb(223, 226, 205);
   border-radius: 0.2rem;
-  width: 10.28rem;
+  /* width: 10.28rem; */
   height: 1.8rem;
 }
 .login:hover {

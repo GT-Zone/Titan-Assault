@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./sign_up.css";
 import { auth, provider } from "./Login";
 import { signInWithPopup } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 const clientId =
   "283564002176-24hc53nk8au0j0or25v4cdb1hjuag9m1.apps.googleusercontent.com";
 function Sign_up() {
@@ -22,12 +24,23 @@ function Sign_up() {
   const handle_password = (e) => {
     set_password(e.target.value);
   };
-
-  const submit_form = () => {
-    console.log("First Name:", first_name);
-    console.log("Last Name:", lst_name);
-    console.log("Email:", email);
-    console.log("Password:", password);
+  const navigate = useNavigate();
+  const submit_form = async (e) => {
+    e.preventDefault();
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      console.log(userCredential);
+      const user = userCredential.user;
+      localStorage.setItem("token", user.accessToken);
+      localStorage.setItem("user", JSON.stringify(user));
+      navigate("/join");
+    } catch (error) {
+      console.error(error);
+    }
     setfirst_name("");
     set_lst_name("");
     set_email("");
