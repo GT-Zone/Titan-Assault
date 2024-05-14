@@ -1,12 +1,21 @@
 import "./App.css";
+import Sign_up from "./component/sign_up";
+import Join from "./component/Join";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
 
 const App = () => {
   return (
-    <>
-      <div className="flex justify-center items-center w-full">
-        <h1 className="text-2xl">Titan Assault</h1>
-      </div>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Join />} />
+        <Route path="/sign_up" element={<Sign_up />} />
+      </Routes>
+    </Router>
   );
 };
 
